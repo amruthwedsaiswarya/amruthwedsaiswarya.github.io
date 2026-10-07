@@ -312,6 +312,9 @@
       stop.append(ticket);
       timeline.append(stop);
 
+      if (event.calendar === false) {
+        return;
+      }
       calendarChips.append(linkButton("btn btn--solid", event.title, googleCalendarUrl(event)));
       const ics = el("button", "btn btn--line", `${event.title} .ics`);
       ics.type = "button";
@@ -319,10 +322,11 @@
       calendarChips.append(ics);
     });
 
-    if (config.events.length > 1) {
-      const all = el("button", "btn btn--text", config.events.length === 2 ? "Add both events" : "Add all events");
+    const calendarEvents = config.events.filter((event) => event.calendar !== false);
+    if (calendarEvents.length > 1) {
+      const all = el("button", "btn btn--text", calendarEvents.length === 2 ? "Add both events" : "Add all events");
       all.type = "button";
-      all.addEventListener("click", () => downloadIcs(config.events, "wedding-events.ics"));
+      all.addEventListener("click", () => downloadIcs(calendarEvents, "wedding-events.ics"));
       calendarChips.append(all);
     }
   }
@@ -387,11 +391,14 @@
       text(config.malayalamDate, 925, '30px "Marcellus", serif', "#dcc48d", "2px");
     }
 
-    let y = 1030;
-    config.events.slice(0, 2).forEach((event) => {
-      text(`${event.title} · ${event.day} · ${event.time} ${event.timeNote}`.toUpperCase(), y, '500 22px "Jost", sans-serif', "#dcc48d", "4px");
-      text(`${event.venue}, ${event.address}`, y + 44, '300 32px "Jost", sans-serif', "#f8f2e6", "0px");
-      y += 120;
+    // Two events get roomy spacing; three are packed tighter to stay inside the border.
+    const events = config.events.slice(0, 3);
+    const compact = events.length > 2;
+    let y = compact ? 1005 : 1030;
+    events.forEach((event) => {
+      text(`${event.title} · ${event.day} · ${event.time} ${event.timeNote}`.toUpperCase(), y, `500 ${compact ? 20 : 22}px "Jost", sans-serif`, "#dcc48d", "4px");
+      text(`${event.venue}, ${event.address}`, y + (compact ? 38 : 44), `300 ${compact ? 28 : 32}px "Jost", sans-serif`, "#f8f2e6", "0px");
+      y += compact ? 96 : 120;
     });
   }
 

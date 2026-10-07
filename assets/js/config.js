@@ -9,8 +9,8 @@ window.WEDDING = {
     monogram: "A & A",
     fullOne: "Amruth Rajan",
     fullTwo: "Aiswarya Raj C",
-    familyOne: "Son of Rajan C & Sreeranjini K",
-    familyTwo: "Daughter of Rajan C & Lisa C"
+    familyOne: "S/o Rajan C & Sreeranjini K",
+    familyTwo: "D/o Rajan C & Lisa C"
   },
 
   place: "Guruvayur · Kerala",
@@ -30,7 +30,7 @@ window.WEDDING = {
   // Add, remove or reorder freely.
   events: [
     {
-      id: "wedding",
+      id: "muhurtham",
       label: "The wedding",
       title: "Muhurtham",
       day: "Sunday · 22 Nov",
@@ -38,6 +38,23 @@ window.WEDDING = {
       endIso: "2026-11-22T09:30:00+05:30",
       time: "7:30 AM",
       timeNote: "to 9:30 AM",
+      venue: "Guruvayur Sree Krishna Temple",
+      address: "Guruvayur, Kerala",
+      mapQuery: "Guruvayur Sree Krishna Temple, Guruvayur, Kerala",
+      mapUrl: "https://maps.app.goo.gl/LXwUfnVjnASLAuyp7",
+      mapCoords: "10.5946914,76.0394266",
+      note: ""
+    },
+    {
+      id: "ceremonies",
+      calendar: false, // shown in the schedule, left out of "Add to your calendar"
+      label: "The celebration",
+      title: "Wedding Ceremonies",
+      day: "Sunday · 22 Nov",
+      startIso: "2026-11-22T10:00:00+05:30",
+      endIso: "2026-11-22T13:00:00+05:30",
+      time: "10:00 AM",
+      timeNote: "to 1:00 PM",
       venue: "Devanganam Residency",
       address: "Guruvayur, Kerala",
       mapQuery: "Devanganam Residency, Guruvayur, Kerala",
