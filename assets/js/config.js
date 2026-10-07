@@ -1,7 +1,7 @@
 // Everything guests read on the site comes from this file.
 window.WEDDING = {
-  // Set after the site is hosted, so shared links point to it. Keep the trailing slash.
-  siteUrl: "",
+  // Shared links, WhatsApp messages and the QR code point here. Keep the trailing slash.
+  siteUrl: "https://amruthwedsaiswarya.github.io/",
 
   couple: {
     one: "Amruth",
