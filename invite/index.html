@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0f2f29">
+  <title>Create an invitation link</title>
+
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Marcellus&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/invite.css">
+</head>
+<body class="maker-page">
+  <main class="maker">
+    <header class="maker-head">
+      <p class="eyebrow">For the family</p>
+      <h1><span data-name-one></span> <i>weds</i> <span data-name-two></span></h1>
+      <p>Write who the invitation is for and what it should say. You get a personal link to send.</p>
+    </header>
+
+    <form class="maker-form" id="makerForm" novalidate>
+      <label for="guestName">Guest name <small>(optional)</small></label>
+      <input id="guestName" type="text" maxlength="60" autocomplete="off" autocapitalize="words" placeholder="Adarsh and Family">
+
+      <label for="inviteText">Invitation text <small>(optional)</small></label>
+      <textarea id="inviteText" rows="5" maxlength="500"></textarea>
+      <p class="maker-hint"><span id="textCount">0</span>/500 · Leave empty to use the standard wording.</p>
+
+      <button class="btn btn--solid" type="submit">Create link</button>
+    </form>
+
+    <section class="maker-preview" aria-label="Preview">
+      <p class="eyebrow">How the guest sees it</p>
+      <article class="letter">
+        <span class="corner corner--tl" aria-hidden="true"></span>
+        <span class="corner corner--tr" aria-hidden="true"></span>
+        <span class="corner corner--bl" aria-hidden="true"></span>
+        <span class="corner corner--br" aria-hidden="true"></span>
+        <p class="letter-dear" id="previewDear" hidden></p>
+        <div class="letter-body" id="previewBody"></div>
+      </article>
+    </section>
+
+    <section class="maker-result" id="result" hidden>
+      <label for="resultLink">Personal link</label>
+      <input id="resultLink" type="text" readonly>
+      <div class="chips">
+        <button class="btn btn--solid" id="copyResult" type="button">Copy link</button>
+        <a class="btn btn--line" id="whatsappResult" href="#" target="_blank" rel="noopener noreferrer">Send on WhatsApp</a>
+        <a class="btn btn--text" id="openResult" href="#" target="_blank" rel="noopener noreferrer">Open it</a>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/invite.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f2f29">
+  <meta name="description" content="You are invited to the wedding of Amruth and Aiswarya.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Amruth weds Aiswarya">
+  <meta property="og:description" content="Sunday, 22 November 2026 · Guruvayur. With great joy, we invite you to celebrate our wedding.">
+  <meta property="og:image" content="./assets/images/couple.jpg">
+  <title>Amruth weds Aiswarya</title>
+
+  <link rel="icon" href="./assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;family=Marcellus&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="is-sealed">
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+
+  <!-- Envelope cover -->
+  <div class="cover" id="cover" role="dialog" aria-modal="true" aria-labelledby="coverTitle">
+    <div class="cover-mandala" data-mandala aria-hidden="true"></div>
+    <p class="cover-blessing">You are invited</p>
+    <h1 class="sr-only" id="coverTitle">Wedding invitation of <span data-names></span></h1>
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-card" aria-hidden="true">
+        <div class="emblem" data-emblem></div>
+      </div>
+      <div class="envelope-front" aria-hidden="true"></div>
+      <div class="envelope-flap" aria-hidden="true"></div>
+      <button class="seal" id="openSeal" type="button" aria-label="Open the invitation">
+        <span data-monogram></span>
+      </button>
+      <p class="envelope-to">
+        <small>An invitation for</small>
+        <span id="coverGuest">You, with love</span>
+      </p>
+    </div>
+
+    <p class="cover-hint">Tap the seal to open</p>
+  </div>
+
+  <nav class="dock" aria-label="Sections">
+    <a href="#home" class="is-active">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#countdown">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+      <span>Countdown</span>
+    </a>
+    <a href="#day">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M4 10h16M8 4v4M16 4v4"/></svg>
+      <span>Events</span>
+    </a>
+    <a href="#moments">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="M4 17l5-4 4 3 3-2 4 3"/></svg>
+      <span>Photos</span>
+    </a>
+    <a href="#keep">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.500-7 10-7 10z"/></svg>
+      <span>Save</span>
+    </a>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="hero-mandala" data-mandala aria-hidden="true"></div>
+      <div class="hero-text">
+        <p class="eyebrow reveal">Together with our families</p>
+        <h2 class="names reveal">
+          <span data-name-one></span>
+          <i>weds</i>
+          <span data-name-two></span>
+        </h2>
+        <div class="datebar reveal">
+          <span data-weekday></span>
+          <strong data-day></strong>
+          <span><b data-month></b> <b data-year></b></span>
+        </div>
+        <p class="hero-mdate reveal" data-malayalam-date></p>
+        <p class="hero-place reveal" data-place></p>
+      </div>
+
+      <div class="medallion reveal">
+        <svg class="medallion-ring" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="ringPath" d="M100,100 m-88,0 a88,88 0 1,1 176,0 a88,88 0 1,1 -176,0"/></defs>
+          <text><textPath href="#ringPath" id="ringText" textLength="548" lengthAdjust="spacing"></textPath></text>
+        </svg>
+        <div class="medallion-photo" id="heroPhoto"></div>
+      </div>
+
+      <a class="scroll-hint" href="#letter"><span>Read the invitation</span><i aria-hidden="true"></i></a>
+    </section>
+
+    <!-- Letter -->
+    <section class="letter-wrap" id="letter">
+      <article class="letter reveal">
+        <span class="corner corner--tl" aria-hidden="true"></span>
+        <span class="corner corner--tr" aria-hidden="true"></span>
+        <span class="corner corner--bl" aria-hidden="true"></span>
+        <span class="corner corner--br" aria-hidden="true"></span>
+        <div class="emblem" data-emblem aria-hidden="true"></div>
+        <p class="letter-dear" id="letterDear" hidden></p>
+        <div class="letter-body" id="letterBody">
+          <p>With the blessings of our elders and hearts full of joy, we invite you to be with us as we begin our life together.</p>
+          <p>Your presence will make the day complete.</p>
+        </div>
+        <div class="letter-families">
+          <div>
+            <strong data-full-one></strong>
+            <small data-family-one></small>
+          </div>
+          <i aria-hidden="true">&amp;</i>
+          <div>
+            <strong data-full-two></strong>
+            <small data-family-two></small>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Countdown -->
+    <section class="countdown" id="countdown">
+      <div class="countdown-mandala" data-mandala aria-hidden="true"></div>
+      <p class="eyebrow eyebrow--gold reveal">Counting the days</p>
+      <h2 class="reveal" id="countdownTitle">Until we say “I do”</h2>
+      <div class="dials reveal" id="dials">
+        <div class="dial" data-unit="days"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44"/><circle class="dial-arc" cx="50" cy="50" r="44"/></svg><strong>0</strong><span>Days</span></div>
+        <div class="dial" data-unit="hours"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44"/><circle class="dial-arc" cx="50" cy="50" r="44"/></svg><strong>0</strong><span>Hours</span></div>
+        <div class="dial" data-unit="minutes"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44"/><circle class="dial-arc" cx="50" cy="50" r="44"/></svg><strong>0</strong><span>Minutes</span></div>
+        <div class="dial" data-unit="seconds"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="44"/><circle class="dial-arc" cx="50" cy="50" r="44"/></svg><strong>0</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <!-- The day -->
+    <section class="day" id="day">
+      <p class="eyebrow reveal">Order of the day</p>
+      <h2 class="reveal">How the day unfolds</h2>
+      <p class="day-date reveal" data-date-range></p>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <!-- Moments -->
+    <section class="moments" id="moments">
+      <p class="eyebrow reveal">A few moments</p>
+      <h2 class="reveal">Us, so far</h2>
+      <div class="strip" id="strip" tabindex="0" aria-label="Photo gallery, scroll sideways"></div>
+      <p class="strip-hint" aria-hidden="true">Swipe →</p>
+    </section>
+
+    <!-- Save & share -->
+    <section class="keep" id="keep">
+      <p class="eyebrow reveal">Don’t forget us</p>
+      <h2 class="reveal">Save the date</h2>
+      <div class="keep-grid">
+        <article class="keep-card reveal">
+          <h3>Add to your calendar</h3>
+          <p>Pick an event and it will land in your calendar with the venue attached.</p>
+          <div class="chips" id="calendarChips"></div>
+        </article>
+        <article class="keep-card keep-card--dark reveal">
+          <h3>Pass it on</h3>
+          <p>Share this invitation with family who should be there.</p>
+          <div class="chips">
+            <button class="btn btn--gold" id="shareNative" type="button">Share</button>
+            <a class="btn btn--line-light" id="whatsappShare" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <button class="btn btn--line-light" id="copyLink" type="button">Copy link</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="keep-grid keep-grid--second">
+        <article class="keep-card keep-card--row reveal">
+          <canvas class="card-preview" id="saveCard" width="1080" height="1350" role="img" aria-label="Save the date card preview"></canvas>
+          <div>
+            <h3>A keepsake for your phone</h3>
+            <p>Download the save-the-date card as a picture.</p>
+            <button class="btn btn--solid" id="downloadCard" type="button">Download card</button>
+          </div>
+        </article>
+        <article class="keep-card keep-card--row reveal">
+          <canvas class="qr" id="qrCanvas" width="300" height="300" role="img" aria-label="QR code for this invitation"></canvas>
+          <div>
+            <h3>Open on another phone</h3>
+            <p class="qr-url" id="qrUrl"></p>
+            <button class="btn btn--line" id="downloadQr" type="button">Download QR</button>
+          </div>
+        </article>
+      </div>
+
+    </section>
+
+    <!-- Closing -->
+    <section class="closing">
+      <div class="closing-mandala" data-mandala aria-hidden="true"></div>
+      <div class="emblem emblem--light" data-emblem aria-hidden="true"></div>
+      <p class="eyebrow eyebrow--gold">With love</p>
+      <h2 class="names names--closing"><span data-name-one></span><i>&amp;</i><span data-name-two></span></h2>
+      <p class="closing-line">We can’t wait to celebrate with you.</p>
+      <p class="closing-date" data-full-date></p>
+    </section>
+  </main>
+
+  <button class="music" id="music" type="button" aria-pressed="false" aria-label="Play music" hidden>
+    <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+  </button>
+  <audio id="audio" loop preload="none"></audio>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/qrcode.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

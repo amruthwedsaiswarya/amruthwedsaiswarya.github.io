@@ -1,0 +1,80 @@
+// Everything guests read on the site comes from this file.
+window.WEDDING = {
+  // Set after the site is hosted, so shared links point to it. Keep the trailing slash.
+  siteUrl: "",
+
+  couple: {
+    one: "Amruth",
+    two: "Aiswarya",
+    monogram: "A & A",
+    fullOne: "Amruth Rajan",
+    fullTwo: "Aiswarya Raj C",
+    familyOne: "Son of Rajan C & Sreeranjini K",
+    familyTwo: "Daughter of Rajan C & Lisa C"
+  },
+
+  place: "Guruvayur · Kerala",
+
+  // The wedding start drives the hero date and the countdown.
+  date: {
+    iso: "2026-11-22T07:30:00+05:30",
+    weekday: "Sunday",
+    day: "22",
+    month: "November",
+    year: "2026"
+  },
+  // Shown above the schedule.
+  dateRange: "22 & 23 November 2026",
+  malayalamDate: "Vrischikam 7, 1202",
+
+  // Add, remove or reorder freely.
+  events: [
+    {
+      id: "wedding",
+      label: "The wedding",
+      title: "Muhurtham",
+      day: "Sunday · 22 Nov",
+      startIso: "2026-11-22T07:30:00+05:30",
+      endIso: "2026-11-22T09:30:00+05:30",
+      time: "7:30 AM",
+      timeNote: "to 9:30 AM",
+      venue: "Devanganam Residency",
+      address: "Guruvayur, Kerala",
+      mapQuery: "Devanganam Residency, Guruvayur, Kerala",
+      mapUrl: "https://maps.app.goo.gl/FempNwHEQXC9k1m89",
+      mapCoords: "10.5959146,76.0414339",
+      note: ""
+    },
+    {
+      id: "reception",
+      label: "The reception",
+      title: "Reception",
+      day: "Monday · 23 Nov",
+      startIso: "2026-11-23T17:00:00+05:30",
+      endIso: "2026-11-23T20:30:00+05:30",
+      time: "5:00 PM",
+      timeNote: "to 8:30 PM",
+      venue: "Neelambari Auditorium",
+      address: "Kannur, Kerala",
+      mapQuery: "Neelambari Auditorium, Kannur, Kerala",
+      mapUrl: "https://maps.app.goo.gl/qXXa8g1DbGgaFhMp6",
+      mapCoords: "11.9116166,75.3576326",
+      note: ""
+    }
+  ],
+
+  // Temporary: the same photo is used everywhere until the real ones arrive.
+  heroPhoto: "./assets/images/couple.jpg",
+  photos: [
+    { src: "./assets/images/couple.jpg", caption: "Where it began" },
+    { src: "./assets/images/couple.jpg", caption: "The yes" },
+    { src: "./assets/images/couple.jpg", caption: "Our people" },
+    { src: "./assets/images/couple.jpg", caption: "Little adventures" },
+    { src: "./assets/images/couple.jpg", caption: "And now, forever" }
+  ],
+
+  // Leave empty to hide the music button.
+  music: "./assets/audio/theme.mp3",
+
+  shareMessage: "With great joy, we invite you to the wedding of Amruth & Aiswarya on Sunday, 22 November 2026 at Guruvayur."
+};
