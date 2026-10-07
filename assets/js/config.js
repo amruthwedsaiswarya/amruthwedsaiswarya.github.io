@@ -63,14 +63,13 @@ window.WEDDING = {
     }
   ],
 
-  // Temporary: the same photo is used everywhere until the real ones arrive.
-  heroPhoto: "./assets/images/couple.jpg",
+  heroPhoto: "./assets/images/hero.jpg",
   photos: [
-    { src: "./assets/images/couple.jpg", caption: "Where it began" },
-    { src: "./assets/images/couple.jpg", caption: "The yes" },
-    { src: "./assets/images/couple.jpg", caption: "Our people" },
-    { src: "./assets/images/couple.jpg", caption: "Little adventures" },
-    { src: "./assets/images/couple.jpg", caption: "And now, forever" }
+    { src: "./assets/images/moment-01.jpg", caption: "Where it began" },
+    { src: "./assets/images/moment-02.jpg", caption: "The yes" },
+    { src: "./assets/images/moment-03.jpg", caption: "Our people" },
+    { src: "./assets/images/moment-04.jpg", caption: "Little adventures" },
+    { src: "./assets/images/moment-05.jpg", caption: "And now, forever" }
   ],
 
   // Leave empty to hide the music button.
