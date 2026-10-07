@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(curl -sI -A \"Mozilla/5.0\" https://maps.app.goo.gl/LXwUfnVjnASLAuyp7)"
-    ]
-  }
-}
